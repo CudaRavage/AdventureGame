@@ -18,6 +18,10 @@ namespace AdventureGame
         int pots = 0;
         int enemyHP;
         int enemyAttack;
+        bool enemyAlive = false;
+        
+
+
 
 
         public void UpdateStats() // update text labels 
@@ -39,11 +43,7 @@ namespace AdventureGame
 
         }
 
-        public void TextBox()
-        {
-            DetailText.Text += "test\r\n";
-           
-        }
+
 
 
         public void FightEnemy()
@@ -54,14 +54,14 @@ namespace AdventureGame
             DetailText.Text += "Enemy has " + enemyHP + " HP\r\n";
             
 
-            //DetailText.ScrollToEnd();
+            
 
 
 
         }
 
 
-        private void FightBtn_Click(object sender, EventArgs e)
+        private void FightBtn_Click(object sender, EventArgs e) // what do Attack button click
         {
     
 
@@ -79,7 +79,7 @@ namespace AdventureGame
             //-------------------- test code for textbox below
 
 
-            TextBox();
+      
             FightEnemy();
 
 
@@ -89,13 +89,46 @@ namespace AdventureGame
             UpdateStats();
             
 
-            DetailText.SelectionStart = DetailText.Text.Length;
-            DetailText.ScrollToCaret();
+            DetailText.SelectionStart = DetailText.Text.Length; // Scroll to new line in TextBox
+            DetailText.ScrollToCaret();                         //
 
         }
 
         private void HPText_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void healthButton_Click(object sender, EventArgs e) // Health potion button
+        {
+            if (pots > 0)  
+            {
+                pots -= 1;
+                health += 10;
+
+                if (health > 100)
+                {
+                    health = 100;
+                    DetailText.Text += "You are at full health." + "\r\n";
+                    DetailText.SelectionStart = DetailText.Text.Length; // Scroll to new line in TextBox
+                    DetailText.ScrollToCaret();
+                    HPText.Text = Convert.ToString(health);
+                    PotsText.Text = Convert.ToString(pots);
+                    return;
+                }
+
+                DetailText.Text += "You have healed 10 Hit Points" + "\r\n";
+                HPText.Text = Convert.ToString(health);
+                PotsText.Text = Convert.ToString(pots);
+                DetailText.SelectionStart = DetailText.Text.Length; // Scroll to new line in TextBox
+                DetailText.ScrollToCaret();                         //
+            }
+            else
+            {
+                DetailText.Text += "You are out of Health Potions." + "\r\n";
+                DetailText.SelectionStart = DetailText.Text.Length; // Scroll to new line in TextBox
+                DetailText.ScrollToCaret();                         //
+            }
 
         }
     }

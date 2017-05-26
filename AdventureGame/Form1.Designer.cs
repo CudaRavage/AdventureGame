@@ -36,6 +36,7 @@
             this.PotsText = new System.Windows.Forms.Label();
             this.FightBtn = new System.Windows.Forms.Button();
             this.DetailText = new System.Windows.Forms.TextBox();
+            this.healthButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -95,11 +96,11 @@
             // 
             // FightBtn
             // 
-            this.FightBtn.Location = new System.Drawing.Point(417, 400);
+            this.FightBtn.Location = new System.Drawing.Point(54, 400);
             this.FightBtn.Name = "FightBtn";
             this.FightBtn.Size = new System.Drawing.Size(75, 23);
             this.FightBtn.TabIndex = 6;
-            this.FightBtn.Text = "button1";
+            this.FightBtn.Text = "Fight";
             this.FightBtn.UseVisualStyleBackColor = true;
             this.FightBtn.Click += new System.EventHandler(this.FightBtn_Click);
             // 
@@ -115,11 +116,22 @@
             this.DetailText.Size = new System.Drawing.Size(477, 248);
             this.DetailText.TabIndex = 7;
             // 
+            // healthButton
+            // 
+            this.healthButton.Location = new System.Drawing.Point(188, 400);
+            this.healthButton.Name = "healthButton";
+            this.healthButton.Size = new System.Drawing.Size(75, 23);
+            this.healthButton.TabIndex = 8;
+            this.healthButton.Text = "Use HP";
+            this.healthButton.UseVisualStyleBackColor = true;
+            this.healthButton.Click += new System.EventHandler(this.healthButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 484);
+            this.Controls.Add(this.healthButton);
             this.Controls.Add(this.DetailText);
             this.Controls.Add(this.FightBtn);
             this.Controls.Add(this.PotsText);
@@ -145,6 +157,7 @@
         private System.Windows.Forms.Label PotsText;
         private System.Windows.Forms.Button FightBtn;
         public System.Windows.Forms.TextBox DetailText;
+        private System.Windows.Forms.Button healthButton;
     }
 }
 
