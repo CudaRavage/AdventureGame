@@ -30,7 +30,7 @@ namespace AdventureGame
 
         public Form1()
         {
-            // game start, window opens - display default health/inventory == update to read/write later 
+            // game start, window opens - display default health/inventory == update to read/write later  
 
             InitializeComponent();
             HPText.Text = Convert.ToString(health);
