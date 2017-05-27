@@ -8,12 +8,31 @@ namespace AdventureGame
 {
     class Enemy
     {
-        private int health;
-        private int damage;
-        private int gold;
-        private int healthPot;
+        private int health = 01;
+        private int damage = 02;
+        private int gold = 03;
+        private int healthPot = 04;
 
         
+
+        public Enemy()
+        {
+           
+        }
+
+
+        public int Health
+        {
+            get { return health; }
+            set { health = value; }
+        }
+
+
+        public int GetHealth()
+        {
+            return health;
+        }
+
 
 
     }

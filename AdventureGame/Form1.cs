@@ -19,8 +19,8 @@ namespace AdventureGame
         int enemyHP;
         int enemyAttack;
         bool enemyAlive = false;
-        
 
+        Enemy newEnemy = new Enemy();
 
 
 
@@ -82,6 +82,10 @@ namespace AdventureGame
       
             FightEnemy();
 
+            
+
+
+            DetailText.Text += newEnemy.Health;  //======================================== RBF
 
             gold += 1;
             pots++;
