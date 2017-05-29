@@ -8,17 +8,22 @@ namespace AdventureGame
 {
     class Enemy
     {
-        private int health = 01;
-        private int damage = 02;
-        private int gold = 03;
-        private int healthPot = 04;
+        private int health;
+        private int damage;
+        private int gold;
+        private int healthPot;
 
         
 
-        public Enemy()
+        public Enemy(int health, int damage, int gold, int healhPot)
         {
-           
-        }
+
+        this.health = health;
+        this.damage = damage;
+        this.gold = gold;
+        this.healthPot = healthPot;
+
+    }
 
 
         public int Health
